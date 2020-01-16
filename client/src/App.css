@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #003699;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -34,7 +34,6 @@ a:hover {
 
 ul {
   list-style: none;
-  color: white;
 }
 
 img {
@@ -79,14 +78,6 @@ img {
   color: var(--dark-color);
 }
 
-.text-success {
-  color: var(--success-color);
-}
-
-.text-danger {
-  color: var(--danger-color);
-}
-
 .text-center {
   text-align: center;
 }
@@ -97,17 +88,6 @@ img {
 
 .text-left {
   text-align: left;
-}
-
-/* Center All */
-.all-center {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 /* Cards */
@@ -182,7 +162,7 @@ img {
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 }
 
 .grid-3 {
@@ -194,7 +174,13 @@ img {
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
+}
+
+.grid-2-3 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 2rem;
 }
 
 .btn {
@@ -228,7 +214,6 @@ img {
 }
 
 .badge {
-  display: inline-block;
   font-size: 0.8rem;
   padding: 0.2rem 0.7rem;
   text-align: center;
@@ -236,6 +221,7 @@ img {
   background: var(--light-color);
   color: #333;
   border-radius: 5px;
+  border: 3px solid white;
 }
 
 .alert {
@@ -337,6 +323,27 @@ button {
   font: inherit;
 }
 
+.form-group {
+  margin: 1.2rem 0;
+}
+
+.form-group input {
+  margin: 0.2rem 0;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.form-container h1,
+h2,
+h3 {
+  text-align: center;
+}
+
 table th,
 table td {
   padding: 1rem;
@@ -355,6 +362,7 @@ table th {
   padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
+  border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
   margin-bottom: 1rem;
 }
@@ -369,16 +377,28 @@ table th {
   margin: 0 0.25rem;
 }
 
-.test {
-  color: white;
-}
-
 .navbar a:hover {
   color: var(--light-color);
 }
 
 .navbar .welcome span {
   margin-right: 0.6rem;
+}
+
+/* Animation (Add After) */
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
 }
 
 /* Mobile Styles */
@@ -410,6 +430,10 @@ table th {
   .navbar {
     display: block;
     text-align: center;
+  }
+
+  .navbar h1 {
+    margin-bottom: 0.6rem;
   }
 
   .navbar ul {
